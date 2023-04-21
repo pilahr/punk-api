@@ -1,1 +1,21 @@
 @use "../../assets/sass/variables" as *;
+
+.filter {
+  padding: 10px;
+
+  &__label {
+    font-family: $primary-font;
+    font-size: 1rem;
+    padding: 5px;
+    text-align: start;
+  }
+  &__checkbox {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__box {
+    width: 5%;
+    margin: 5px;
+  }
+}

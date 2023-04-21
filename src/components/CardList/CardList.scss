@@ -1,1 +1,30 @@
-@use "../../assets/sass/variables"
+@use "../../assets/sass/variables" as *;
+
+.card {
+  padding: 10px;
+  margin: 10px 20px;
+  width: 240px;
+  height: 380px;
+  border-radius: 5px;
+  border-top: 3px solid $color-primary;
+  background-color: $color-gray;
+
+  &__image {
+    width: auto;
+    height: 150px;
+  }
+
+  &__content {
+    padding: 5px;
+    max-height: 160px;
+    overflow-y: auto;
+
+    &--heading {
+      font-family: $primary-font;
+    }
+
+    &--text {
+      font-family: $primary-font;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+.heading {
+  display: flex;
+  padding: 10px;
+}
+.heading__text {
+  font-family: "Merienda", "Arial", "san-serif";
+  text-align: left;
+}/*# sourceMappingURL=Header.css.map */

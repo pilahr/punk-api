@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+.card {
+  padding: 10px;
+  margin: 10px 20px;
+  width: 240px;
+  height: 380px;
+  border-radius: 5px;
+  border-top: 3px solid #66fcf1;
+  background-color: #c5c6c7;
+}
+.card__image {
+  width: auto;
+  height: 150px;
+}
+.card__content {
+  padding: 5px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.card__content--heading {
+  font-family: "Merienda", "Arial", "san-serif";
+}
+.card__content--text {
+  font-family: "Merienda", "Arial", "san-serif";
+}/*# sourceMappingURL=CardList.css.map */

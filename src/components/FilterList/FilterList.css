@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+.filter {
+  padding: 10px;
+}
+.filter__label {
+  font-family: "Merienda", "Arial", "san-serif";
+  font-size: 1rem;
+  padding: 5px;
+  text-align: start;
+}
+.filter__checkbox {
+  display: flex;
+  justify-content: flex-end;
+}
+.filter__box {
+  width: 5%;
+  margin: 5px;
+}/*# sourceMappingURL=FilterList.css.map */

@@ -1,1 +1,8 @@
 @use "../../assets/sass/variables" as *;
+
+.main {
+  background-color: $color-black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
