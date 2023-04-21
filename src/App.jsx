@@ -16,11 +16,11 @@ const App = () => {
 
       <section className="app__searching">
         <div className="app__nav">
-          <Nav />
+          <Nav beerArr={filteredBeers} />
         </div>
-        
+
         <section className="app__main">
-          <Main beerArr={filteredBeers} />
+          <Main title={"Our Main Beers"} beerArr={filteredBeers} />
         </section>
       </section>
     </div>

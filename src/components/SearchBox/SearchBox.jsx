@@ -1,12 +1,22 @@
 import "./SearchBox.scss";
-import React from "react";
+import { React, useState } from "react";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
+  const { searchTerm, handleInput } = props;
+
   return (
-    <form className="search">
-      <label className="search__label">Search for our varieties of beers..</label>
-      <input placeholder="Search.." className="search__input"></input>
-    </form>
+    <div className="search">
+      <label className="search__label">
+        Search for our varieties of beers..
+      </label>
+      <input
+        type="text"
+        placeholder="Search.."
+        className="search__input"
+        onInput={handleInput}
+        value={searchTerm}
+      />
+    </div>
   );
 };
 

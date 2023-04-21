@@ -8,6 +8,9 @@
   border-top: 3px solid #66fcf1;
   background-color: #c5c6c7;
 }
+.card__title {
+  color: white;
+}
 .card__image {
   width: auto;
   height: 150px;
@@ -19,7 +22,10 @@
 }
 .card__content--heading {
   font-family: "Merienda", "Arial", "san-serif";
+  font-size: 18px;
 }
 .card__content--text {
   font-family: "Merienda", "Arial", "san-serif";
+  font-size: 16px;
+  color: rgb(73, 69, 69);
 }/*# sourceMappingURL=CardList.css.map */
