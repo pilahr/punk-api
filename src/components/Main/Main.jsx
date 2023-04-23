@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Main.scss";
 import CardList from "../CardList/CardList";
 
@@ -15,6 +15,7 @@ const Main = (props) => {
               beerImage={beer.image_url}
               beerName={beer.name}
               beerDescription={beer.description}
+              beerABV={beer.abv}
             />
           </>
         );

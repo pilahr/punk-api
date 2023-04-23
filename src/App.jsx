@@ -28,7 +28,7 @@ const App = () => {
       <div className="app__container">
         <section className="app__nav">
           <SearchBox
-            label="search for our varieties of beers.."
+            label="explore our varieties of beers.."
             searchTerms={searchTerm}
             handleInput={handleInput}
           />

@@ -7,7 +7,7 @@
 }
 
 .app__nav {
-  background-color: #45a29e;
+  background: url(./assets/images/background.jpg);
 }
 
 @media screen and (min-width: 768px) {

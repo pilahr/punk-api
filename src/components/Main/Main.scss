@@ -1,11 +1,11 @@
 @use "../../assets/sass/variables" as *;
 
 .main {
-  background-color: $color-black;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 20px;
   border-left: 5px solid $color-primary;
   height: 100%;
+  background: url(../../assets/images/background.jpg);
 }
