@@ -11,16 +11,25 @@
     font-size: 16px;
     font-weight: bold;
     padding: 10px;
-    color: $color-white;
+    color: $color-black;
+  }
+
+  &__box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 3px solid $color-gray;
+    box-shadow: 4px 4px $color-black;
+    border-radius: 12px;
+    background-color: $color-white;
   }
   &__input {
     width: 15;
     height: auto;
-    border: 3px solid $color-gray;
     font-size: 18px;
     border-radius: 5px;
-    box-shadow: 4px 4px $color-black;
     font-family: $primary-font;
-    padding-left: 10px;
+    outline: none;
+    border: none;
   }
 }

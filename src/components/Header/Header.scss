@@ -3,9 +3,13 @@
 .heading {
   display: flex;
   padding: 10px;
+  background-color: $color-black;
+  margin-bottom: 10px;
+  border-bottom: 5px solid $color-primary;
 
   &__text {
     font-family: $primary-font;
     text-align: left;
+    color: $color-white;
   }
 }

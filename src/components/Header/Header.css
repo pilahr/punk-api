@@ -2,8 +2,12 @@
 .heading {
   display: flex;
   padding: 10px;
+  background-color: black;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #66fcf1;
 }
 .heading__text {
   font-family: "Merienda", "Arial", "san-serif";
   text-align: left;
-}/*# sourceMappingURL=Header.css.map */
+  color: white;
+}

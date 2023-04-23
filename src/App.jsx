@@ -6,7 +6,9 @@ import Main from "./components/Main/Main";
 import beers from "../src/assets/data/beers.js";
 
 const App = () => {
-  const filteredBeers = [...beers].filter((beer) => beer.name);
+  const filteredBeers = beers
+    .filter((beer) => beer.name)
+    .sort((beerA, beerB) => beerB.name - beerA.name);
 
   return (
     <div className="app">
@@ -14,15 +16,15 @@ const App = () => {
         <Header />
       </section>
 
-      <section className="app__searching">
-        <div className="app__nav">
-          <Nav beerArr={filteredBeers} />
-        </div>
+      <div className="app__searching">
+        <section className="app__nav">
+          <Nav />
+        </section>
 
         <section className="app__main">
-          <Main title={"Our Main Beers"} beerArr={filteredBeers} />
+          <Main beerArr={filteredBeers} />
         </section>
-      </section>
+      </div>
     </div>
   );
 };
