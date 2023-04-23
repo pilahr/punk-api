@@ -11,6 +11,7 @@ const Main = (props) => {
         return (
           <>
             <CardList
+              key={beer.id}
               beerImage={beer.image_url}
               beerName={beer.name}
               beerDescription={beer.description}

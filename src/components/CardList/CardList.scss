@@ -6,9 +6,12 @@
   width: 240px;
   height: 380px;
   border-radius: 5px;
-  border-top: 3px solid $color-primary;
+  border-top: 5px solid $color-primary;
   background-color: $color-gray;
 
+  &__title {
+    color: $color-white;
+  }
   &__image {
     width: auto;
     height: 150px;
@@ -21,10 +24,13 @@
 
     &--heading {
       font-family: $primary-font;
+      font-size: 18px;
     }
 
     &--text {
       font-family: $primary-font;
+      font-size: 16px;
+      color: rgb(73, 69, 69);
     }
   }
 }

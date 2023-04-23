@@ -4,4 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}/*# sourceMappingURL=Main.css.map */
+  padding-top: 20px;
+  border-left: 5px solid #66fcf1;
+}

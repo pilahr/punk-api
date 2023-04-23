@@ -7,8 +7,7 @@ const CardList = (props) => {
   return (
     <div className="card">
       <img className="card__image" src={beerImage} alt="beer image" />
-
-      <h2 className="card__content--heading">{beerName.toUpperCase()}</h2>
+      <h2 className="card__content--heading">{beerName}</h2>
       <div className="card__content">
         <p className="card__content--text">{beerDescription}</p>
       </div>

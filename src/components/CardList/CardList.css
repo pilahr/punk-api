@@ -5,8 +5,11 @@
   width: 240px;
   height: 380px;
   border-radius: 5px;
-  border-top: 3px solid #66fcf1;
+  border-top: 5px solid #66fcf1;
   background-color: #c5c6c7;
+}
+.card__title {
+  color: white;
 }
 .card__image {
   width: auto;
@@ -19,7 +22,10 @@
 }
 .card__content--heading {
   font-family: "Merienda", "Arial", "san-serif";
+  font-size: 18px;
 }
 .card__content--text {
   font-family: "Merienda", "Arial", "san-serif";
-}/*# sourceMappingURL=CardList.css.map */
+  font-size: 16px;
+  color: #494545;
+}
