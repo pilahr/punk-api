@@ -3,22 +3,31 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 }
 .search__label {
   font-family: "Merienda", "Arial", "san-serif";
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   padding: 10px;
   color: white;
 }
-.search__input {
-  width: 15;
-  height: auto;
+.search__box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   border: 3px solid #c5c6c7;
-  font-size: 18px;
-  border-radius: 5px;
   box-shadow: 4px 4px black;
-  font-family: "Merienda", "Arial", "san-serif";
-  padding-left: 10px;
+  border-radius: 12px;
+  background-color: white;
+  margin: 10px;
 }
+.search__input {
+  height: auto;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: "Merienda", "Arial", "san-serif";
+  outline: none;
+  border: none;
+  border-radius: 12px;
+}/*# sourceMappingURL=SearchBox.css.map */

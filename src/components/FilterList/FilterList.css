@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 .filter {
-  padding: 10px;
+  padding: 3px;
 }
 .filter__label {
   font-family: "Merienda", "Arial", "san-serif";
@@ -15,4 +15,4 @@
 .filter__box {
   width: 15%;
   margin: 5px;
-}
+}/*# sourceMappingURL=FilterList.css.map */
