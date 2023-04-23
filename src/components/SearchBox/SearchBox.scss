@@ -24,12 +24,12 @@
     background-color: $color-white;
   }
   &__input {
-    width: 15;
     height: auto;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 5px;
     font-family: $primary-font;
     outline: none;
     border: none;
+    border-radius: 12px;
   }
 }

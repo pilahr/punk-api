@@ -7,6 +7,11 @@ import SearchBox from "../SearchBox/SearchBox";
 
 const Nav = (props) => {
   const { searchTerm, handleInput } = props;
+  const [highABV, setHighABV] = useState(false);
+
+  const handleChange = () => {
+    setHighABV(!highABV);
+  };
 
   return (
     <>
@@ -16,7 +21,9 @@ const Nav = (props) => {
           searchTerms={searchTerm}
           handleInput={handleInput}
         />
-        <FilterList />
+        <FilterList label={"High ABV ( > 6.0%)"} handleChange={handleChange} />
+        <FilterList label={"Classic Range"} />
+        <FilterList label={"Acidic (ph < 4)"} />
       </div>
       <section>
         <ExploreBeers beerArr={beers} />

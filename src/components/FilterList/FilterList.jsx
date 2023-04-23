@@ -1,21 +1,21 @@
 import React from "react";
 import "./FilterList.scss";
 
-const FilterList = () => {
+const FilterList = (props) => {
+  const { label, handleChange, highABV } = props;
   return (
     <div className="filter">
+
       <div className="filter__checkbox">
-        <label className="filter__label">High ABV (&gt; 6.0%) </label>
-        <input type="checkbox" className="filter__box"></input>
+        <label className="filter__label">{label} </label>
+        <input
+          type="checkbox"
+          className="filter__box"
+          onChange={handleChange}
+          value={highABV}
+        ></input>
       </div>
-      <div className="filter__checkbox">
-        <label className="filter__label">Classic Range </label>
-        <input type="checkbox" className="filter__box"></input>
-      </div>
-      <div className="filter__checkbox">
-        <label className="filter__label">Acidic (ph &lt; 4) </label>
-        <input type="checkbox" className="filter__box"></input>
-      </div>
+      
     </div>
   );
 };

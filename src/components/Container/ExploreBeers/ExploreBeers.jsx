@@ -13,7 +13,7 @@ const ExploreBeers = (props) => {
     setSearchTerm(lowerCaseSearchedResult);
   };
 
-  const searchedBeers = beerArr.filter((beer, index) => {
+  const searchedBeers = beerArr.filter((beer) => {
     const beerNameLowerCase = beer.name.toLowerCase();
     return beerNameLowerCase.includes(searchTerm);
   });
