@@ -12,7 +12,7 @@
 
   &__image {
     width: auto;
-    height: 250px;
+    height: 200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -39,6 +39,19 @@
       margin-top: 5px;
       border-radius: 15px;
     }
+    &--acidic {
+      font-family: $primary-font;
+      font-size: 16px;
+      background-color: rgb(234, 157, 74);
+      width: fit-content;
+      padding: 5px;
+      margin-top: 5px;
+      border-radius: 15px;
+    }
+
+    &--brewed {
+      font-family: $primary-font;
+    }
 
     &--text {
       font-family: $primary-font;
@@ -47,16 +60,13 @@
     }
 
     &--text:hover {
-      color: $color-white;
-      // color: rgb(110, 0, 110);
+      color: $color-black;
     }
   }
 }
 
 .card:hover {
-  background-color: #747272;
-  border: 3px solid $color-white;
-  color: $color-white;
+  border: 5px solid $color-white;
 }
 
 .flipbox {
@@ -83,4 +93,9 @@
 
 .card__content {
   transform: rotateY(180deg);
+}
+
+.hilight {
+  display: flex;
+  gap: 5px;
 }

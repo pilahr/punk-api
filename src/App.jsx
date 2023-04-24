@@ -8,7 +8,11 @@ import FilterList from "./components/FilterList/FilterList";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showABV, setShowABV] = useState(false);
+  const [showClassicRange, setShowClassicRange] = useState(false);
+  const [showAcidic, setShowAcidic] = useState(false);
 
+  // SEARCH BAR
   const handleInput = (event) => {
     const lowerCaseSearchedResult = event.target.value.toLowerCase();
     setSearchTerm(lowerCaseSearchedResult);
@@ -18,6 +22,35 @@ const App = () => {
     const beerNameLowerCase = beer.name.toLowerCase();
     return beerNameLowerCase.includes(searchTerm);
   });
+
+  // ABV FILTER
+  const handleShowABV = () => {
+    setShowABV(!showABV);
+  };
+
+  const filterHighABV = beers.filter(
+    (beer) => beer.abv != null && beer.abv >= 6
+  );
+
+  // CLASSIC RANGE FILTER
+  const handleShowClassicRange = () => {
+    setShowClassicRange(!showClassicRange);
+  };
+
+  const classicDate = new Date("2010");
+
+  const filterFirstBrew = beers.filter((beer) => beer.first_brewed);
+
+  // moment(filterFirstBrew).isBefore(classicDate);
+
+  // ACIDIC FILTER
+  const handleShowAcidic = () => {
+    setShowAcidic(!showAcidic);
+  };
+
+  const filterAcidicBeer = beers.filter(
+    (beer) => beer.ph != null && beer.ph < 4
+  );
 
   return (
     <div className="app">
@@ -33,13 +66,32 @@ const App = () => {
             handleInput={handleInput}
           />
 
-          <FilterList label={"High ABV ( > 6.0%)"} />
-          <FilterList label={"Classic Range"} />
-          <FilterList label={"Acidic (ph < 4)"} />
+          <FilterList label={"High ABV ( > 6.0%)"} onChange={handleShowABV} />
+          <FilterList
+            label={"Classic Range"}
+            onChange={handleShowClassicRange}
+          />
+          <FilterList label={"Acidic (ph < 4)"} onChange={handleShowAcidic} />
         </section>
 
         <section className="app__main">
-          <Main beerArr={searchedBeers} />
+          {showABV && (
+            <Main beerArr={handleShowABV ? filterHighABV : <Main />} />
+          )}
+
+          {/* {showClassicRange && (
+            <Main
+              beerArr={
+                handleShowClassicRange ? filterClassicRange : searchedBeers
+              }
+            />
+          )} */}
+
+          {showAcidic && (
+            <Main
+              beerArr={handleShowAcidic ? filterAcidicBeer : searchedBeers}
+            />
+          )}
         </section>
       </div>
     </div>

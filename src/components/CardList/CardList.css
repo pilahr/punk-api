@@ -43,13 +43,11 @@
   color: rgb(63, 60, 60);
 }
 .card__content--text:hover {
-  color: white;
+  color: black;
 }
 
 .card:hover {
-  background-color: #747272;
-  border: 3px solid white;
-  color: white;
+  border: 5px solid white;
 }
 
 .flipbox {
