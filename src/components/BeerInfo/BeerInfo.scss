@@ -1,21 +1,18 @@
 @use "../../assets/sass/variables" as *;
 
-.wrap {
-
-}
 .beer-info {
   padding: 20px;
   box-sizing: border-box;
-  border: 5px solid $color-secondary;
+  border: 10px solid $color-secondary;
   width: 100%;
   left: 20px;
   right: 20px;
   display: flex;
-
   gap: 20px;
   justify-content: center;
   align-items: center;
-  background-color: $color-gray;
+  background-image: linear-gradient($color-gray, rgb(162, 170, 231));
+  // background-color: $color-gray;
 
   &__header {
     width: 100%;
@@ -53,7 +50,6 @@
   &__content-container {
     width: 60%;
     padding: 10px;
- 
   }
 
   &__abv {

@@ -6,6 +6,10 @@
   font-family: "primary-font";
 }
 
+.app {
+  background: url("../../assets/images/background.jpg");
+}
+
 @media screen and (min-width: 768px) {
   .app__container {
     display: flex;

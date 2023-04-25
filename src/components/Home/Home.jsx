@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import SearchBox from "../SearchBox/SearchBox";
 import FilterList from "../FilterList/FilterList";
-import beers from "../../assets/data/beers.js";
+// import beers from "../../assets/data/beers.js";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -64,7 +64,7 @@ const Home = () => {
   //     } else if (showAcidic) {
   //       return <Main beerArr={filterAcidicBeer} />;
   //     } else {
-  //       return <Main beerArr={filteredBeers} />;
+  //       return <Main beerArr={searchedBeers} />;
   //     }
   //   };
 
