@@ -1,0 +1,74 @@
+@use "../../assets/sass/variables" as *;
+
+.beer-info {
+  padding: 20px;
+  box-sizing: border-box;
+  border: 5px solid $color-secondary;
+  width: 70%;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    height: 400px;
+  }
+
+  &__heading {
+    font-family: $primary-font;
+  }
+
+  &__tag {
+    font-family: $primary-font;
+    border-bottom: 3px solid $color-gray;
+    padding: 10px;
+    width: 60%;
+  }
+
+  &__items {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+    &--abv {
+      font-family: $primary-font;
+    }
+    &--ibu {
+      font-family: $primary-font;
+    }
+  }
+  &__content-container {
+    width: 60%;
+    padding: 10px;
+  }
+
+  &__abv {
+    font-family: $primary-font;
+  }
+
+  &__ibu {
+    font-family: $primary-font;
+    border-bottom: 3px solid $color-gray;
+  }
+  &__content {
+    font-family: $primary-font;
+    margin-top: 10px;
+  }
+  &__food-pairing {
+    font-family: $primary-font;
+    margin-top: 10px;
+    &--text {
+      font-family: $primary-font;
+    }
+  }
+  &__tip {
+    font-family: $primary-font;
+    padding-top: 10px;
+    &--text {
+      font-family: $primary-font;
+    }
+  }
+}

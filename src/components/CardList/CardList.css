@@ -11,7 +11,7 @@
 }
 .card__image {
   width: auto;
-  height: 250px;
+  height: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -36,6 +36,19 @@
   padding: 5px;
   margin-top: 5px;
   border-radius: 15px;
+}
+.card__content--acidic {
+  font-family: "Merienda", "Arial", "san-serif";
+  font-size: 16px;
+  background-color: rgb(234, 157, 74);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+.card__content--brewed {
+  font-family: "Merienda", "Arial", "san-serif";
 }
 .card__content--text {
   font-family: "Merienda", "Arial", "san-serif";
@@ -75,4 +88,9 @@
 
 .card__content {
   transform: rotateY(180deg);
+}
+
+.hilight {
+  display: flex;
+  gap: 5px;
 }/*# sourceMappingURL=CardList.css.map */

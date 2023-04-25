@@ -22,7 +22,6 @@ const CardList = (props) => {
             <p className="card__content--acidic">pH {beerAcidic}</p>
           </div>
           <p className="card__content--brewed">first Brewed: {beerBrewed}</p>
-       
         </div>
 
         <div className="card__content">
