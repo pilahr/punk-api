@@ -3,12 +3,10 @@ import "./Main.scss";
 import CardList from "../CardList/CardList";
 import { Link } from "react-router-dom";
 
-const Main = (props) => {
-  const { beerArr } = props;
-
+const Main = ({ beers }) => {
   return (
     <div className="main">
-      {beerArr.map((beer) => {
+      {beers.map((beer) => {
         return (
           <Link to={`/beer/${beer.id}`}>
             <CardList
