@@ -5,8 +5,10 @@
   &__label {
     font-family: $primary-font;
     font-size: 1rem;
+    font-weight: bold;
     padding: 5px;
     text-align: start;
+    color: $color-white;
   }
   &__checkbox {
     display: flex;
@@ -16,5 +18,9 @@
   &__box {
     width: 15%;
     margin: 5px;
+  }
+
+  &__box:hover {
+    cursor: pointer;
   }
 }

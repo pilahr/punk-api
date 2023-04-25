@@ -5,8 +5,10 @@
 .filter__label {
   font-family: "Merienda", "Arial", "san-serif";
   font-size: 1rem;
+  font-weight: bold;
   padding: 5px;
   text-align: start;
+  color: white;
 }
 .filter__checkbox {
   display: flex;
@@ -15,4 +17,7 @@
 .filter__box {
   width: 15%;
   margin: 5px;
+}
+.filter__box:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=FilterList.css.map */

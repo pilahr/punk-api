@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+.beer-info {
+  padding: 20px;
+  box-sizing: border-box;
+  border: 10px solid #45a29e;
+  width: 100%;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#c5c6c7, rgb(162, 170, 231));
+}
+.beer-info__header {
+  width: 100%;
+}
+.beer-info__image {
+  height: 400px;
+}
+.beer-info__heading {
+  font-family: "Merienda", "Arial", "san-serif";
+  font-size: 2rem;
+}
+.beer-info__tag {
+  font-family: "Merienda", "Arial", "san-serif";
+  border-bottom: 3px solid black;
+  padding: 10px;
+  width: 60%;
+}
+.beer-info__items {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+.beer-info__items--abv {
+  font-family: "Merienda", "Arial", "san-serif";
+}
+.beer-info__items--ibu {
+  font-family: "Merienda", "Arial", "san-serif";
+}
+.beer-info__content-container {
+  width: 60%;
+  padding: 10px;
+}
+.beer-info__abv {
+  font-family: "Merienda", "Arial", "san-serif";
+}
+.beer-info__ibu {
+  font-family: "Merienda", "Arial", "san-serif";
+  border-bottom: 2px solid black;
+}
+.beer-info__content {
+  font-family: "Merienda", "Arial", "san-serif";
+  margin-top: 10px;
+}
+.beer-info__food-pairing {
+  font-family: "Merienda", "Arial", "san-serif";
+  margin-top: 10px;
+}
+.beer-info__food-pairing--text {
+  font-family: "Merienda", "Arial", "san-serif";
+}
+.beer-info__tip {
+  font-family: "Merienda", "Arial", "san-serif";
+  padding-top: 10px;
+}
+.beer-info__tip--text {
+  font-family: "Merienda", "Arial", "san-serif";
+}/*# sourceMappingURL=BeerInfo.css.map */

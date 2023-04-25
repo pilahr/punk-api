@@ -1,48 +1,40 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import { React, useState } from "react";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import beers from "../src/assets/data/beers.js";
-import SearchBox from "./components/SearchBox/SearchBox";
-import FilterList from "./components/FilterList/FilterList";
+import { React, useState, useEffect } from "react";
+import BeerInfo from "./components/BeerInfo/BeerInfo";
+import Home from "./components/Home/Home";
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [beers, setBeers] = useState([]);
 
-  const handleInput = (event) => {
-    const lowerCaseSearchedResult = event.target.value.toLowerCase();
-    setSearchTerm(lowerCaseSearchedResult);
+  const getBeersData = async () => {
+    const url = "https://api.punkapi.com/v2/beers";
+    const response = await fetch(url);
+    const data = await response.json();
+
+    setBeers(data);
   };
 
-  const searchedBeers = beers.filter((beer) => {
-    const beerNameLowerCase = beer.name.toLowerCase();
-    return beerNameLowerCase.includes(searchTerm);
-  });
+  useEffect(() => {
+    getBeersData();
+  }, []);
+
+  const filteredBeers = beers.filter(
+    (beer) => beer.image_url && beer.description
+  );
 
   return (
-    <div className="app">
-      <section className="app__heading">
-        <Header />
-      </section>
-
-      <div className="app__container">
-        <section className="app__nav">
-          <SearchBox
-            label="search for our varieties of beers.."
-            searchTerms={searchTerm}
-            handleInput={handleInput}
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home beers={beers}/>} />
+          <Route
+            path="/beer/:beerId"
+            element={<BeerInfo beerArr={filteredBeers} />}
           />
-
-          <FilterList label={"High ABV ( > 6.0%)"} />
-          <FilterList label={"Classic Range"} />
-          <FilterList label={"Acidic (ph < 4)"} />
-        </section>
-
-        <section className="app__main">
-          <Main beerArr={searchedBeers} />
-        </section>
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 };
 
