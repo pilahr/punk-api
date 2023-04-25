@@ -7,7 +7,7 @@ const BeerInfo = (props) => {
   const { beerArr } = props;
   const { beerId } = useParams();
 
-  const getBeers = beerArr.find((beer) => beer.id == beerId);
+  const getBeers = beerArr.find((beer) => beer.id === beerId);
 
   const {
     name,

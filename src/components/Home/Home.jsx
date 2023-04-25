@@ -13,59 +13,87 @@ const Home = ({ beers }) => {
 
   const [showHome, setShowHome] = useState(false);
 
-  const toggleHome = () => {
-    setShowHome(!showHome);
-  };
-
   // SEARCH BAR
   const handleInput = (event) => {
     const lowerCaseSearchedResult = event.target.value.toLowerCase();
     setSearchTerm(lowerCaseSearchedResult);
   };
 
-  const searchedBeers = beers.filter((beer) => {
-    const beerNameLowerCase = beer.name.toLowerCase();
-    return beerNameLowerCase.includes(searchTerm);
+  // const searchedBeers = beers.filter((beer) => {
+  //   const beerNameLowerCase = beer.name.toLowerCase();
+  //   return beerNameLowerCase.includes(searchTerm);
+  // });
+
+  //CHECK BOX
+  const handleCheckBox = (filterId) => {
+    switch (filterId) {
+      case "showABV":
+        setShowABV(!showABV);
+        return;
+      case "showClassicRange":
+        setShowClassicRange(!showClassicRange);
+        return;
+      case "showAcidic":
+        setShowAcidic(!showAcidic);
+        return;
+    }
+  };
+
+  const filteredResults = beers.filter((beer) => {
+    const lowerCaseBeer = beer.name.toLowerCase();
+    if (!lowerCaseBeer.includes(searchTerm)) {
+      return false;
+    } else if (showABV && beer.abv < 6) {
+      return false;
+    } else if (showClassicRange && beer.first_brewed.slice(-4) > 2010) {
+      return false;
+    } else if (showAcidic && beer.ph > 4) {
+      return false;
+    }
+    return true;
   });
 
-  // ABV FILTER
-  const handleShowABV = () => {
-    setShowABV(!showABV);
+  const toggleHome = () => {
+    setShowHome(!showHome);
   };
 
-  const filterHighABV = beers.filter(
-    (beer) => beer.abv != null && beer.abv >= 6
-  );
+  // ABV FILTER
+  // const handleShowABV = () => {
+  //   setShowABV(!showABV);
+  // };
+
+  // const filterHighABV = beers.filter(
+  //   (beer) => beer.abv != null && beer.abv >= 6
+  // );
 
   // CLASSIC RANGE FILTER
-  const handleShowClassicRange = () => {
-    setShowClassicRange(!showClassicRange);
-  };
+  // const handleShowClassicRange = () => {
+  //   setShowClassicRange(!showClassicRange);
+  // };
 
-  const classicDate = new Date("2010");
-
-  const firstBrewed = beers.filter((beer) => beer.first_brewed);
-
-  const filterFirstBrewed = new Date(firstBrewed);
+  // const filterFirstBrewed = beers.filter(
+  //   (beer) => beer.first_brewed != null && beer.first_brewed.slice(-4) < 2010
+  // );
 
   // ACIDIC FILTER
-  const handleShowAcidic = () => {
-    setShowAcidic(!showAcidic);
-  };
+  // const handleShowAcidic = () => {
+  //   setShowAcidic(!showAcidic);
+  // };
 
-  const filterAcidicBeer = beers.filter(
-    (beer) => beer.ph != null && beer.ph < 4
-  );
+  // const filterAcidicBeer = beers.filter(
+  //   (beer) => beer.ph != null && beer.ph < 4
+  // );
 
-  //   const getFiltered = () => {
-  //     if (showABV) {
-  //       return <Main beerArr={filterHighABV} />;
-  //     } else if (showAcidic) {
-  //       return <Main beerArr={filterAcidicBeer} />;
-  //     } else {
-  //       return <Main beerArr={searchedBeers} />;
-  //     }
-  //   };
+  // const results = beers
+  //   .filter((beer) =>
+  //     beer.name.toLowerCase().includes(searchTerm.toLowerCase())
+  //   )
+  //   .filter((beer) => (beer.abv != null ? beer.abv >= 6 : beer))
+  //   .filter((beer) =>
+  //     beer.first_brewed != null ? beer.first_brewed.slice(-4) < 2010 : beer
+  //   )
+  //   .filter((beer) => (beer.ph != null ? beer.ph < 4 : beer))
+  //   .map((beer) => <Main beer={beer} />); //map through all that pass criteria above
 
   return (
     <div className="app">
@@ -81,17 +109,26 @@ const Home = ({ beers }) => {
             handleInput={handleInput}
           />
 
-          <FilterList label={"High ABV ( > 6.0%)"} onChange={handleShowABV} />
           <FilterList
-            label={"Classic Range"}
-            onChange={handleShowClassicRange}
+            filterId="showABV"
+            label={"High ABV ( > 6.0%)"}
+            handleCheckBox={handleCheckBox}
           />
-          <FilterList label={"Acidic (ph < 4)"} onChange={handleShowAcidic} />
+          <FilterList
+            filterId="showClassicRange"
+            label={"Classic Range"}
+            handleCheckBox={handleCheckBox}
+          />
+          <FilterList
+            filterId="showAcidic"
+            label={"Acidic (ph < 4)"}
+            handleCheckBox={handleCheckBox}
+          />
         </section>
 
         <section className="app__main">
+          <Main beers={filteredResults} />
           {/* <Main beerArr={searchedBeers} /> */}
-          {/* <Main beerArr={getFiltered()} /> */}
 
           {/* {showABV ? (
             <Main beerArr={filterHighABV} />
@@ -99,11 +136,11 @@ const Home = ({ beers }) => {
             <Main beerArr={searchedBeers} />
           )} */}
 
-          {showAcidic ? (
+          {/* {showAcidic ? (
             <Main beerArr={filterAcidicBeer} />
           ) : (
             <Main beerArr={searchedBeers} />
-          )}
+          )} */}
         </section>
       </div>
     </div>
