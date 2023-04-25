@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import { React, useState } from "react";
-// import beers from "../src/assets/data/beers.js";
+import { React, useState, useEffect } from "react";
 import BeerInfo from "./components/BeerInfo/BeerInfo";
 import Home from "./components/Home/Home";
 
@@ -16,6 +15,10 @@ const App = () => {
     setBeers(data);
   };
 
+  useEffect(() => {
+    getBeersData();
+  }, []);
+
   const filteredBeers = beers.filter(
     (beer) => beer.image_url && beer.description
   );
@@ -24,7 +27,7 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home beers={beers}/>} />
           <Route
             path="/beer/:beerId"
             element={<BeerInfo beerArr={filteredBeers} />}

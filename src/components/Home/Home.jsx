@@ -4,9 +4,8 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import SearchBox from "../SearchBox/SearchBox";
 import FilterList from "../FilterList/FilterList";
-// import beers from "../../assets/data/beers.js";
 
-const Home = () => {
+const Home = ({ beers }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showABV, setShowABV] = useState(false);
   const [showClassicRange, setShowClassicRange] = useState(false);
@@ -91,20 +90,20 @@ const Home = () => {
         </section>
 
         <section className="app__main">
-          <Main beerArr={searchedBeers} />
+          {/* <Main beerArr={searchedBeers} /> */}
           {/* <Main beerArr={getFiltered()} /> */}
 
           {/* {showABV ? (
-              <Main beerArr={filterHighABV} />
-            ) : (
-              <Main beerArr={filteredBeers} />
-            )}
+            <Main beerArr={filterHighABV} />
+          ) : (
+            <Main beerArr={searchedBeers} />
+          )} */}
 
-            {showAcidic ? (
-              <Main beerArr={filterAcidicBeer} />
-            ) : (
-              <Main beerArr={filteredBeers} />
-            )} */}
+          {showAcidic ? (
+            <Main beerArr={filterAcidicBeer} />
+          ) : (
+            <Main beerArr={searchedBeers} />
+          )}
         </section>
       </div>
     </div>

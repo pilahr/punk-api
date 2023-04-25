@@ -9,6 +9,7 @@ const CardList = (props) => {
     beerABV,
     beerBrewed,
     beerAcidic,
+    beerIBU,
   } = props;
 
   return (
@@ -20,8 +21,10 @@ const CardList = (props) => {
           <div className="hilight">
             <p className="card__content--abv">ABV {beerABV}%</p>
             <p className="card__content--acidic">pH {beerAcidic}</p>
+            <p className="card__content--ibu">IBU {beerIBU}</p>
           </div>
           <p className="card__content--brewed">first Brewed: {beerBrewed}</p>
+          <p className="card__content--hidden">Click Me!</p>
         </div>
 
         <div className="card__content">

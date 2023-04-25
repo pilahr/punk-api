@@ -19,6 +19,7 @@ const Main = (props) => {
               beerABV={beer.abv}
               beerBrewed={beer.first_brewed}
               beerAcidic={beer.ph}
+              beerIBU={beer.ibu}
             />
           </Link>
         );

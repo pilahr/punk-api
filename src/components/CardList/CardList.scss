@@ -16,7 +16,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 5px;
   }
 
   &__content {
@@ -26,12 +26,14 @@
 
     &--heading {
       font-family: $primary-font;
+      color: $color-black;
       font-size: 18px;
       margin-top: 10px;
     }
 
     &--abv {
       font-family: $primary-font;
+      color: $color-black;
       font-size: 16px;
       background-color: rgb(241, 89, 241);
       width: fit-content;
@@ -41,6 +43,7 @@
     }
     &--acidic {
       font-family: $primary-font;
+      color: $color-black;
       font-size: 16px;
       background-color: rgb(234, 157, 74);
       width: fit-content;
@@ -49,8 +52,21 @@
       border-radius: 15px;
     }
 
+    &--ibu {
+      font-family: $primary-font;
+      color: $color-black;
+      font-size: 16px;
+      background-color: rgb(74, 234, 117);
+      width: fit-content;
+      padding: 5px;
+      margin-top: 5px;
+      border-radius: 15px;
+    }
+
     &--brewed {
       font-family: $primary-font;
+      color: $color-black;
+      padding-top: 8px;
     }
 
     &--text {
@@ -61,6 +77,33 @@
 
     &--text:hover {
       color: $color-black;
+    }
+
+    &--hidden {
+      font-family: $primary-font;
+      font-size: 16px;
+      font-weight: bold;
+      color: rgb(148, 21, 165);
+      margin-top: 8px;
+      background-color: yellow;
+      width: fit-content;
+      padding: 5px;
+      border-radius: 10px;
+      animation: animate 1.5s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.9;
+      }
+
+      100% {
+        opacity: 0;
+      }
     }
   }
 }

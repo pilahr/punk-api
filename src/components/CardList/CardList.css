@@ -15,7 +15,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .card__content {
   padding: 20px;
@@ -24,11 +24,13 @@
 }
 .card__content--heading {
   font-family: "Merienda", "Arial", "san-serif";
+  color: black;
   font-size: 18px;
   margin-top: 10px;
 }
 .card__content--abv {
   font-family: "Merienda", "Arial", "san-serif";
+  color: black;
   font-size: 16px;
   background-color: rgb(241, 89, 241);
   width: -moz-fit-content;
@@ -39,6 +41,7 @@
 }
 .card__content--acidic {
   font-family: "Merienda", "Arial", "san-serif";
+  color: black;
   font-size: 16px;
   background-color: rgb(234, 157, 74);
   width: -moz-fit-content;
@@ -47,8 +50,21 @@
   margin-top: 5px;
   border-radius: 15px;
 }
+.card__content--ibu {
+  font-family: "Merienda", "Arial", "san-serif";
+  color: black;
+  font-size: 16px;
+  background-color: rgb(74, 234, 117);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 15px;
+}
 .card__content--brewed {
   font-family: "Merienda", "Arial", "san-serif";
+  color: black;
+  padding-top: 8px;
 }
 .card__content--text {
   font-family: "Merienda", "Arial", "san-serif";
@@ -57,6 +73,30 @@
 }
 .card__content--text:hover {
   color: black;
+}
+.card__content--hidden {
+  font-family: "Merienda", "Arial", "san-serif";
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(148, 21, 165);
+  margin-top: 8px;
+  background-color: yellow;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .card:hover {
