@@ -42,11 +42,9 @@ const Home = ({ beers }) => {
     setShowClassicRange(!showClassicRange);
   };
 
-  const classicDate = new Date("2010");
-
-  const firstBrewed = beers.filter((beer) => beer.first_brewed);
-
-  const filterFirstBrewed = new Date(firstBrewed);
+  const filterFirstBrewed = beers.filter(
+    (beer) => beer.first_brewed != null && beer.first_brewed.slice(-4) < 2010
+  );
 
   // ACIDIC FILTER
   const handleShowAcidic = () => {
@@ -66,6 +64,17 @@ const Home = ({ beers }) => {
   //       return <Main beerArr={searchedBeers} />;
   //     }
   //   };
+
+  const results = beers
+    .filter((beer) =>
+      beer.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter((beer) => (beer.abv != null ? beer.abv >= 6 : beer))
+    .filter((beer) =>
+      beer.first_brewed != null ? beer.first_brewed.slice(-4) < 2010 : beer
+    )
+    .filter((beer) => (beer.ph != null ? beer.ph < 4 : beer))
+    .map((beer) => <Main beer={beer} />); //map through all that pass criteria above
 
   return (
     <div className="app">
@@ -90,8 +99,8 @@ const Home = ({ beers }) => {
         </section>
 
         <section className="app__main">
+          {results}
           {/* <Main beerArr={searchedBeers} /> */}
-          {/* <Main beerArr={getFiltered()} /> */}
 
           {/* {showABV ? (
             <Main beerArr={filterHighABV} />
@@ -99,11 +108,11 @@ const Home = ({ beers }) => {
             <Main beerArr={searchedBeers} />
           )} */}
 
-          {showAcidic ? (
+          {/* {showAcidic ? (
             <Main beerArr={filterAcidicBeer} />
           ) : (
             <Main beerArr={searchedBeers} />
-          )}
+          )} */}
         </section>
       </div>
     </div>
