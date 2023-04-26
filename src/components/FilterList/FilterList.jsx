@@ -2,7 +2,7 @@ import React from "react";
 import "./FilterList.scss";
 
 const FilterList = (props) => {
-  const { label, handleCheckBox, filterId } = props;
+  const { label, handleCheckBox, filterOption } = props;
   return (
     <div className="filter">
       <div className="filter__checkbox">
@@ -10,7 +10,7 @@ const FilterList = (props) => {
         <input
           type="checkbox"
           className="filter__box"
-          onChange={() => handleCheckBox(filterId)}
+          onChange={() => handleCheckBox(filterOption)}
         ></input>
       </div>
     </div>

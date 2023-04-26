@@ -25,8 +25,8 @@ const Home = ({ beers }) => {
   // });
 
   //CHECK BOX
-  const handleCheckBox = (filterId) => {
-    switch (filterId) {
+  const handleCheckBox = (filterOption) => {
+    switch (filterOption) {
       case "showABV":
         setShowABV(!showABV);
         return;
@@ -110,17 +110,17 @@ const Home = ({ beers }) => {
           />
 
           <FilterList
-            filterId="showABV"
+            filterOption="showABV"
             label={"High ABV ( > 6.0%)"}
             handleCheckBox={handleCheckBox}
           />
           <FilterList
-            filterId="showClassicRange"
+            filterOption="showClassicRange"
             label={"Classic Range"}
             handleCheckBox={handleCheckBox}
           />
           <FilterList
-            filterId="showAcidic"
+            filterOption="showAcidic"
             label={"Acidic (ph < 4)"}
             handleCheckBox={handleCheckBox}
           />

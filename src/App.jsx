@@ -15,6 +15,7 @@ const App = () => {
     setBeers(data);
   };
 
+  // https://api.punkapi.com/v2/beers?abv_gt=6
   useEffect(() => {
     getBeersData();
   }, []);
@@ -30,7 +31,7 @@ const App = () => {
           <Route path="/" element={<Home beers={beers}/>} />
           <Route
             path="/beer/:beerId"
-            element={<BeerInfo beerArr={filteredBeers} />}
+            element={<BeerInfo beers={filteredBeers} />}
           />
         </Routes>
       </div>
