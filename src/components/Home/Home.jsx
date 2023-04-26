@@ -6,7 +6,13 @@ import SearchBox from "../SearchBox/SearchBox";
 import FilterList from "../FilterList/FilterList";
 import RangeInput from "../RangeInput/RangeInput";
 
-const Home = ({ beers, beersPerPage, handleRangeChange }) => {
+const Home = ({
+  beers,
+  beersRange,
+  handleRangeChange,
+  abv,
+  handleABVChange,
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showABV, setShowABV] = useState(false);
   const [showClassicRange, setShowClassicRange] = useState(false);
@@ -134,11 +140,22 @@ const Home = ({ beers, beersPerPage, handleRangeChange }) => {
 
           <RangeInput
             id={"beer range"}
-            label={`Number of beers: ${beersPerPage}`}
+            label={`Page: ${beersRange}`} 
             min={1}
-            max={80}
-            value={beersPerPage}
+            max={5}
+            value={beersRange}
             onChange={handleRangeChange}
+            beers={beersRange}
+          />
+
+          <RangeInput
+            id={"abv range"}
+            label={`ABV above: ${abv}`} 
+            min={1}
+            max={55}
+            value={abv}
+            onChange={handleABVChange}
+            beers={abv}
           />
         </section>
 

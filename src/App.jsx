@@ -6,32 +6,38 @@ import Home from "./components/Home/Home";
 
 const App = () => {
   const [beers, setBeers] = useState([]);
-  // const [highABV, setHighABV] = useState(6);
-  const [beersPerPage, setBeersPerPage] = useState(40);
 
-  const getBeersData = async (resultNumber) => {
-    const url = "https://api.punkapi.com/v2/beers";
-    
+  const [beersRange, setBeersRange] = useState(1);
+  const [abv, setAbv] = useState(1);
 
-    let urlToShowBeer = url + `?per_page=${resultNumber}`;
+  const getBeersData = async (page, abvResult) => {
+    const url = `https://api.punkapi.com/v2/beers`;
+    let pageURL = url + `?page=${page}&per_page=80`;
 
-    const response = await fetch(urlToShowBeer);
+    if (abvResult > 1) {
+      pageURL = url + `?abv_gt=${abvResult}`;
+    }
+
+    const response = await fetch(pageURL);
     const data = await response.json();
-
-    console.log(data);
+    console.log(pageURL);
     setBeers(data);
   };
 
   // https://api.punkapi.com/v2/beers?abv_gt=6
   //https://api.punkapi.com/v2/beers?per_page=80
-  //https://api.punkapi.com/v2/beers?page=5&per_page=80
+  //https://api.punkapi.com/v2/beers?page=5&per_page=80 //325total
 
   useEffect(() => {
-    getBeersData(beersPerPage);
-  }, [beersPerPage]);
+    getBeersData(beersRange, abv);
+  }, [beersRange, abv]);
 
   const handleRangeChange = (event) => {
-    setBeersPerPage(event.target.value);
+    setBeersRange(event.target.value);
+  };
+
+  const handleABVChange = (event) => {
+    setAbv(event.target.value);
   };
 
   const filteredBeers = beers.filter(
@@ -46,9 +52,11 @@ const App = () => {
             path="/"
             element={
               <Home
-                beers={beers}
+                beers={filteredBeers}
                 handleRangeChange={handleRangeChange}
-                beersPerPage={beersPerPage}
+                beersRange={beersRange}
+                abv={abv}
+                handleABVChange={handleABVChange}
               />
             }
           />
