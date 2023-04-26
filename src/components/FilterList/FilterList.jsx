@@ -10,7 +10,8 @@ const FilterList = (props) => {
         <input
           type="checkbox"
           className="filter__box"
-          onChange={() => handleCheckBox(filterOption)}
+          value={filterOption}
+          onChange={handleCheckBox}
         ></input>
       </div>
     </div>

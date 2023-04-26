@@ -1,0 +1,16 @@
+@use "../../assets/sass/variables" as *;
+
+.range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+
+  &__label {
+    color: $color-white;
+    font-family: $primary-font;
+    font-weight: bold;
+  }
+}
