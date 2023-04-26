@@ -9,28 +9,38 @@ const App = () => {
 
   const [beersRange, setBeersRange] = useState(1);
   const [abv, setAbv] = useState(1);
+  const [ebc, setEbc] = useState(1);
+  const [ibu, setIbu] = useState(1)
 
-  const getBeersData = async (page, abvResult) => {
+  const getBeersData = async (page, abvResult, ebcResult,ibuResult) => {
     const url = `https://api.punkapi.com/v2/beers`;
     let pageURL = url + `?page=${page}&per_page=80`;
 
     if (abvResult > 1) {
       pageURL = url + `?abv_gt=${abvResult}`;
+    } else if (ebcResult > 1) {
+      pageURL = url + `?ebc_gt=${ebcResult}`;
+    } else if (ibuResult >1) {
+      pageURL = url + `?ibu_gt=${ibuResult}`
     }
 
     const response = await fetch(pageURL);
     const data = await response.json();
+
+
     console.log(pageURL);
+
     setBeers(data);
   };
 
   // https://api.punkapi.com/v2/beers?abv_gt=6
   //https://api.punkapi.com/v2/beers?per_page=80
   //https://api.punkapi.com/v2/beers?page=5&per_page=80 //325total
+  //https://api.punkapi.com/v2/beers?ebc_gt=1
 
   useEffect(() => {
-    getBeersData(beersRange, abv);
-  }, [beersRange, abv]);
+    getBeersData(beersRange, abv, ebc, ibu);
+  }, [beersRange, abv, ebc,ibu]);
 
   const handleRangeChange = (event) => {
     setBeersRange(event.target.value);
@@ -38,6 +48,14 @@ const App = () => {
 
   const handleABVChange = (event) => {
     setAbv(event.target.value);
+  };
+
+  const handleEBCChange = (event) => {
+    setEbc(event.target.value);
+  };
+
+  const handleIBUChange = (event) => {
+    setIbu(event.target.value);
   };
 
   const filteredBeers = beers.filter(
@@ -57,6 +75,10 @@ const App = () => {
                 beersRange={beersRange}
                 abv={abv}
                 handleABVChange={handleABVChange}
+                ebc={ebc}
+                handleEBCChange={handleEBCChange}
+                ibu={ibu}
+                handleIBUChange={handleIBUChange}
               />
             }
           />

@@ -18,6 +18,7 @@ const Main = ({ beers }) => {
               beerBrewed={beer.first_brewed}
               beerAcidic={beer.ph}
               beerIBU={beer.ibu}
+              beerEBC={beer.ebc}
             />
           </Link>
         );

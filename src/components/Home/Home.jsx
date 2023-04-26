@@ -12,6 +12,10 @@ const Home = ({
   handleRangeChange,
   abv,
   handleABVChange,
+  ebc,
+  handleEBCChange,
+  ibu,
+  handleIBUChange,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showABV, setShowABV] = useState(false);
@@ -140,7 +144,7 @@ const Home = ({
 
           <RangeInput
             id={"beer range"}
-            label={`Page: ${beersRange}`} 
+            label={`Page: ${beersRange}`}
             min={1}
             max={5}
             value={beersRange}
@@ -150,12 +154,35 @@ const Home = ({
 
           <RangeInput
             id={"abv range"}
-            label={`ABV above: ${abv}`} 
+            label={`ABV above: ${abv}%`}
+            title={"ABV: Alcohol By Volume"}
             min={1}
             max={55}
             value={abv}
             onChange={handleABVChange}
             beers={abv}
+          />
+
+          <RangeInput
+            id={"ibu range"}
+            label={`IBU above: ${ibu}%`}
+            title={"IBU: International Bitterness Units scale"}
+            min={1}
+            max={100}
+            value={ibu}
+            onChange={handleIBUChange}
+            beers={ibu}
+          />
+
+          <RangeInput
+            id={"ebc range"}
+            label={`EBC above: ${ebc}`}
+            title={"EBC: European Brewery Convention"}
+            min={1}
+            max={55}
+            value={ebc}
+            onChange={handleEBCChange}
+            beers={ebc}
           />
         </section>
 
