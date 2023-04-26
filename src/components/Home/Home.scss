@@ -8,8 +8,7 @@
 }
 
 .app {
-    background: url("../../assets/images/background.jpg")
-
+  background: url("../../assets/images/background.jpg");
 }
 
 @media screen and (min-width: 768px) {
@@ -18,6 +17,10 @@
       display: flex;
       gap: 10px;
       height: 100%;
+    }
+
+    &__nav {
+      width: 500px;
     }
 
     &__main {

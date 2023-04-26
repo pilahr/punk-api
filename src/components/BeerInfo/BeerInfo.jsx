@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 
 const BeerInfo = (props) => {
-  const { beerArr } = props;
+  const { beers } = props;
   const { beerId } = useParams();
 
-  const getBeers = beerArr.find((beer) => beer.id === beerId);
+  const getBeers = beers.find((beer) => beer.id == beerId);
 
   const {
     name,

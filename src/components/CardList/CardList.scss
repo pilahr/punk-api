@@ -12,7 +12,7 @@
 
   &__image {
     width: auto;
-    height: 200px;
+    height: 180px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -29,6 +29,7 @@
       color: $color-black;
       font-size: 18px;
       margin-top: 10px;
+      text-decoration: none;
     }
 
     &--abv {
@@ -40,6 +41,7 @@
       padding: 5px;
       margin-top: 5px;
       border-radius: 15px;
+      text-align: center;
     }
     &--acidic {
       font-family: $primary-font;
@@ -50,6 +52,7 @@
       padding: 5px;
       margin-top: 5px;
       border-radius: 15px;
+      text-align: center;
     }
 
     &--ibu {
@@ -61,6 +64,19 @@
       padding: 5px;
       margin-top: 5px;
       border-radius: 15px;
+      text-align: center;
+    }
+
+    &--ebc {
+      font-family: $primary-font;
+      color: $color-black;
+      font-size: 16px;
+      background-color: rgb(234, 237, 102);
+      width: fit-content;
+      padding: 5px;
+      margin-top: 5px;
+      border-radius: 15px;
+      text-align: center;
     }
 
     &--brewed {
@@ -85,7 +101,7 @@
       font-weight: bold;
       color: rgb(148, 21, 165);
       margin-top: 8px;
-      background-color: yellow;
+      background-color: rgb(102, 234, 240);
       width: fit-content;
       padding: 5px;
       border-radius: 10px;
@@ -98,7 +114,7 @@
       }
 
       50% {
-        opacity: 0.9;
+        opacity: 1;
       }
 
       100% {
@@ -110,32 +126,7 @@
 
 .card:hover {
   border: 5px solid $color-white;
-}
-
-.flipbox {
-  perspective: 1000px;
-}
-
-.card {
-  position: relative;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.flipbox:hover .card {
-  transform: rotateY(180deg);
-  cursor: pointer;
-}
-.card__font,
-.card__content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.card__content {
-  transform: rotateY(180deg);
+  transform: translateY(5px);
 }
 
 .hilight {

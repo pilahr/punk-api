@@ -7,17 +7,56 @@ import Home from "./components/Home/Home";
 const App = () => {
   const [beers, setBeers] = useState([]);
 
-  const getBeersData = async () => {
-    const url = "https://api.punkapi.com/v2/beers";
-    const response = await fetch(url);
+  const [beersRange, setBeersRange] = useState(1);
+  const [abv, setAbv] = useState(1);
+  const [ebc, setEbc] = useState(1);
+  const [ibu, setIbu] = useState(1)
+
+  const getBeersData = async (page, abvResult, ebcResult,ibuResult) => {
+    const url = `https://api.punkapi.com/v2/beers`;
+    let pageURL = url + `?page=${page}&per_page=80`;
+
+    if (abvResult > 1) {
+      pageURL = url + `?abv_gt=${abvResult}`;
+    } else if (ebcResult > 1) {
+      pageURL = url + `?ebc_gt=${ebcResult}`;
+    } else if (ibuResult >1) {
+      pageURL = url + `?ibu_gt=${ibuResult}`
+    }
+
+    const response = await fetch(pageURL);
     const data = await response.json();
+
+
+    console.log(pageURL);
 
     setBeers(data);
   };
 
+  // https://api.punkapi.com/v2/beers?abv_gt=6
+  //https://api.punkapi.com/v2/beers?per_page=80
+  //https://api.punkapi.com/v2/beers?page=5&per_page=80 //325total
+  //https://api.punkapi.com/v2/beers?ebc_gt=1
+
   useEffect(() => {
-    getBeersData();
-  }, []);
+    getBeersData(beersRange, abv, ebc, ibu);
+  }, [beersRange, abv, ebc,ibu]);
+
+  const handleRangeChange = (event) => {
+    setBeersRange(event.target.value);
+  };
+
+  const handleABVChange = (event) => {
+    setAbv(event.target.value);
+  };
+
+  const handleEBCChange = (event) => {
+    setEbc(event.target.value);
+  };
+
+  const handleIBUChange = (event) => {
+    setIbu(event.target.value);
+  };
 
   const filteredBeers = beers.filter(
     (beer) => beer.image_url && beer.description
@@ -27,10 +66,25 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={<Home beers={beers}/>} />
+          <Route
+            path="/"
+            element={
+              <Home
+                beers={filteredBeers}
+                handleRangeChange={handleRangeChange}
+                beersRange={beersRange}
+                abv={abv}
+                handleABVChange={handleABVChange}
+                ebc={ebc}
+                handleEBCChange={handleEBCChange}
+                ibu={ibu}
+                handleIBUChange={handleIBUChange}
+              />
+            }
+          />
           <Route
             path="/beer/:beerId"
-            element={<BeerInfo beerArr={filteredBeers} />}
+            element={<BeerInfo beers={filteredBeers} />}
           />
         </Routes>
       </div>
