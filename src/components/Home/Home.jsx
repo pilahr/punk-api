@@ -41,6 +41,8 @@ const Home = ({
       case "showAcidic":
         setShowAcidic(!showAcidic);
         return;
+      default:
+        return;
     }
   };
 
