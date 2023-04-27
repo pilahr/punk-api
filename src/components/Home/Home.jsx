@@ -29,11 +29,6 @@ const Home = ({
     setSearchTerm(lowerCaseSearchedResult);
   };
 
-  // const searchedBeers = beers.filter((beer) => {
-  //   const beerNameLowerCase = beer.name.toLowerCase();
-  //   return beerNameLowerCase.includes(searchTerm);
-  // });
-
   //CHECK BOX
   const handleCheckBox = (event) => {
     switch (event.target.value) {
@@ -72,44 +67,6 @@ const Home = ({
   const toggleHome = () => {
     setShowHome(!showHome);
   };
-
-  // ABV FILTER
-  // const handleShowABV = () => {
-  //   setShowABV(!showABV);
-  // };
-
-  // const filterHighABV = beers.filter(
-  //   (beer) => beer.abv != null && beer.abv >= 6
-  // );
-
-  // CLASSIC RANGE FILTER
-  // const handleShowClassicRange = () => {
-  //   setShowClassicRange(!showClassicRange);
-  // };
-
-  // const filterFirstBrewed = beers.filter(
-  //   (beer) => beer.first_brewed != null && beer.first_brewed.slice(-4) < 2010
-  // );
-
-  // ACIDIC FILTER
-  // const handleShowAcidic = () => {
-  //   setShowAcidic(!showAcidic);
-  // };
-
-  // const filterAcidicBeer = beers.filter(
-  //   (beer) => beer.ph != null && beer.ph < 4
-  // );
-
-  // const results = beers
-  //   .filter((beer) =>
-  //     beer.name.toLowerCase().includes(searchTerm.toLowerCase())
-  //   )
-  //   .filter((beer) => (beer.abv != null ? beer.abv >= 6 : beer))
-  //   .filter((beer) =>
-  //     beer.first_brewed != null ? beer.first_brewed.slice(-4) < 2010 : beer
-  //   )
-  //   .filter((beer) => (beer.ph != null ? beer.ph < 4 : beer))
-  //   .map((beer) => <Main beer={beer} />); //map through all that pass criteria above
 
   return (
     <div className="app">
@@ -154,7 +111,7 @@ const Home = ({
 
           <RangeInput
             id={"abv range"}
-            label={`ABV above: ${abv}%`}
+            label={`Min ABV: ${abv}%`}
             title={"ABV: Alcohol By Volume"}
             min={1}
             max={55}
@@ -165,7 +122,7 @@ const Home = ({
 
           <RangeInput
             id={"ibu range"}
-            label={`IBU above: ${ibu}%`}
+            label={`Min IBU: ${ibu}`}
             title={"IBU: International Bitterness Units scale"}
             min={1}
             max={100}
@@ -176,10 +133,10 @@ const Home = ({
 
           <RangeInput
             id={"ebc range"}
-            label={`EBC above: ${ebc}`}
+            label={`Min EBC: ${ebc}`}
             title={"EBC: European Brewery Convention"}
             min={1}
-            max={55}
+            max={500}
             value={ebc}
             onChange={handleEBCChange}
             beers={ebc}
@@ -188,19 +145,6 @@ const Home = ({
 
         <section className="app__main">
           <Main beers={filteredResults} />
-          {/* <Main beerArr={searchedBeers} /> */}
-
-          {/* {showABV ? (
-            <Main beerArr={filterHighABV} />
-          ) : (
-            <Main beerArr={searchedBeers} />
-          )} */}
-
-          {/* {showAcidic ? (
-            <Main beerArr={filterAcidicBeer} />
-          ) : (
-            <Main beerArr={searchedBeers} />
-          )} */}
         </section>
       </div>
     </div>

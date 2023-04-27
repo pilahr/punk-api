@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import "./RangeInput.scss";
 
 const RangeInput = ({ min, max, label, id, onChange, value, title }) => {
@@ -6,11 +6,11 @@ const RangeInput = ({ min, max, label, id, onChange, value, title }) => {
     <div className="range">
       <label className="range__label" htmlFor={id}>
         {label}
-       
       </label>
-      <p className="range__title" >{title}</p>
+      <p className="range__title">{title}</p>
       <div className="range__wrap">
-        <input className="range__input"
+        <input
+          className="range__input"
           id={id}
           type="range"
           min={min}
