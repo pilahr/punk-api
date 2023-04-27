@@ -8,9 +8,9 @@ const App = () => {
   const [beers, setBeers] = useState([]);
 
   const [beersRange, setBeersRange] = useState(1);
-  const [abv, setAbv] = useState(1);
-  const [ebc, setEbc] = useState(1);
-  const [ibu, setIbu] = useState(1);
+  const [abv, setAbv] = useState(0);
+  const [ebc, setEbc] = useState(0);
+  const [ibu, setIbu] = useState(0);
 
   const getBeersData = async (page, abvResult, ebcResult, ibuResult) => {
     const url = `https://api.punkapi.com/v2/beers`;

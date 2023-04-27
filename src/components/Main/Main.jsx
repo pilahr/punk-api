@@ -21,6 +21,7 @@ const Main = ({ beers }) => {
               beerEBC={beer.ebc}
             />
           </Link>
+          
         );
       })}
     </div>
