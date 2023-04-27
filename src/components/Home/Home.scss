@@ -11,6 +11,15 @@
   background: url("../../assets/images/background.jpg");
 }
 
+.no-record {
+  color: $color-white;
+  font-family: $primary-font;
+  font-size: 2rem;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .app {
     &__container {

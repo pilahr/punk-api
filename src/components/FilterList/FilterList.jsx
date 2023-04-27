@@ -1,8 +1,7 @@
 import React from "react";
 import "./FilterList.scss";
 
-const FilterList = (props) => {
-  const { label, handleCheckBox, filterOption } = props;
+const FilterList = ({ label, handleCheckBox, filterOption }) => {
   return (
     <div className="filter">
       <div className="filter__checkbox">

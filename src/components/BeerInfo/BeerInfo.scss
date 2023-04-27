@@ -11,15 +11,17 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient($color-gray, rgb(162, 170, 231));
-  // background-color: $color-gray;
-
-  &__header {
+  background-image: linear-gradient($color-gray, rgb(162, 170, 231, 0.3));
+  back &__header {
     width: 100%;
   }
 
   &__image {
     height: 400px;
+  }
+
+  &__image:hover {
+    transform: scale(1.2);
   }
 
   &__heading {
@@ -40,10 +42,10 @@
     gap: 10px;
     padding: 10px;
 
-    &--abv {
-      font-family: $primary-font;
-    }
-    &--ibu {
+    &--abv,
+    &--ibu,
+    &--ph,
+    &--ebc {
       font-family: $primary-font;
     }
   }
@@ -57,6 +59,13 @@
   }
 
   &__ibu {
+    font-family: $primary-font;
+  }
+  &__ph {
+    font-family: $primary-font;
+  }
+
+  &__ebc {
     font-family: $primary-font;
     border-bottom: 2px solid $color-black;
   }
