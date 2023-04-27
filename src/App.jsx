@@ -34,7 +34,6 @@ const App = () => {
     getBeersData(beersRange, abv, ebc, ibu);
   }, [beersRange, abv, ebc, ibu]);
 
-
   const handleRangeChange = (event) => {
     setBeersRange(event.target.value);
   };
