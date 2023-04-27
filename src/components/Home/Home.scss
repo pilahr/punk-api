@@ -9,6 +9,11 @@
 
 .app {
   background: url("../../assets/images/background.jpg");
+
+  &__nav {
+    border-right: 5px solid $color-primary;
+    padding-bottom: 30px;
+  }
 }
 
 .no-record {

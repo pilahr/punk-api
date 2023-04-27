@@ -122,7 +122,7 @@ const Home = ({
             id={"abv range"}
             label={`Min ABV: ${abv}%`}
             title={"ABV: Alcohol By Volume"}
-            min={1}
+            min={0}
             max={55}
             value={abv}
             onChange={handleABVChange}
@@ -133,7 +133,7 @@ const Home = ({
             id={"ibu range"}
             label={`Min IBU: ${ibu}`}
             title={"IBU: International Bitterness Units scale"}
-            min={1}
+            min={0}
             max={100}
             value={ibu}
             onChange={handleIBUChange}
@@ -144,13 +144,14 @@ const Home = ({
             id={"ebc range"}
             label={`Min EBC: ${ebc}`}
             title={"EBC: European Brewery Convention"}
-            min={1}
+            min={0}
             max={500}
             value={ebc}
             onChange={handleEBCChange}
             beers={ebc}
           />
         </section>
+
         {output}
       </div>
     </div>
