@@ -11,9 +11,8 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient($color-gray, rgb(162, 170, 231));
-
-  &__header {
+  background-image: linear-gradient($color-gray, rgb(162, 170, 231, 0.3));
+  back &__header {
     width: 100%;
   }
 

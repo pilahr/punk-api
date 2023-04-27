@@ -64,6 +64,15 @@ const Home = ({
     return true;
   });
 
+  let output = <p className="no-record">No Records Found</p>;
+  if (filteredResults.length > 0) {
+    output = (
+      <section className="app__main">
+        <Main beers={filteredResults} />
+      </section>
+    );
+  }
+
   const toggleHome = () => {
     setShowHome(!showHome);
   };
@@ -142,10 +151,7 @@ const Home = ({
             beers={ebc}
           />
         </section>
-
-        <section className="app__main">
-          <Main beers={filteredResults} />
-        </section>
+        {output}
       </div>
     </div>
   );

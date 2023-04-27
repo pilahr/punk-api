@@ -27,13 +27,13 @@ const App = () => {
     const response = await fetch(pageURL);
     const data = await response.json();
 
-    console.log(data);
     setBeers(data);
   };
 
   useEffect(() => {
     getBeersData(beersRange, abv, ebc, ibu);
   }, [beersRange, abv, ebc, ibu]);
+
 
   const handleRangeChange = (event) => {
     setBeersRange(event.target.value);
