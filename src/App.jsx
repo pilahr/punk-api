@@ -55,32 +55,30 @@ const App = () => {
   );
 
   return (
-    <Router>
-      <div className="app">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                beers={filteredBeers}
-                handleRangeChange={handleRangeChange}
-                beersRange={beersRange}
-                abv={abv}
-                handleABVChange={handleABVChange}
-                ebc={ebc}
-                handleEBCChange={handleEBCChange}
-                ibu={ibu}
-                handleIBUChange={handleIBUChange}
-              />
-            }
-          />
-          <Route
-            path="/beer/:beerId"
-            element={<BeerInfo beers={filteredBeers} />}
-          />
-        </Routes>
-      </div>
-    </Router>
+    <div className="app">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              beers={filteredBeers}
+              handleRangeChange={handleRangeChange}
+              beersRange={beersRange}
+              abv={abv}
+              handleABVChange={handleABVChange}
+              ebc={ebc}
+              handleEBCChange={handleEBCChange}
+              ibu={ibu}
+              handleIBUChange={handleIBUChange}
+            />
+          }
+        />
+        <Route
+          path="/beer/:beerId"
+          element={<BeerInfo beers={filteredBeers} />}
+        />
+      </Routes>
+    </div>
   );
 };
 
